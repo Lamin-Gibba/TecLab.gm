@@ -1,5 +1,5 @@
 """
-WSGI config for basseac project.
+WSGI config for bak project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
