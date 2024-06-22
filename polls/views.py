@@ -54,10 +54,10 @@ def Mission(request):
     return render(request, 'mission&vission.html')
 
 def Powersfunctions(request):
-    return render(request, 'Powers&functions.html')
+    return render(request, 'powers&functions.html')
 
 def Demographic(request):
-    return render(request, 'Demographic-map.html')
+    return render(request, 'demographic-map.html')
 
 def Chairman(request):
     return render(request, 'chairman.html')
@@ -69,7 +69,7 @@ def Ceo(request):
     return render(request, 'ceo.html')
 
 def Planningdevelopment(request):
-    return render(request, 'Planning&development.html')
+    return render(request, 'planning&development.html')
 
 def Council(request):
     return render(request, 'council-members.html')
