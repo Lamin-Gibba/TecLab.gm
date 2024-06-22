@@ -1,0 +1,406 @@
+{%load static %}
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basse.gm</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href="https://www.facebook.com/BASSEASC/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href="https://twitter.com/AreaBasse"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.linkedin.com/company/basse-area-council/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+       
+ <div id="google_translate_element" class="translate-select position-absolute top-0 start-50 translate-middle-x"></div>
+
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold">+220 7864131</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+        <a href="{% url 'Index' %}" class="navbar-brand ps-3 me-0">
+            <h1 class="text-white m-0" style="font-size: 22px; z-index: 1;">Basse Area Council</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-3 p-lg-0">
+                <a href="{% url 'Index' %}" class="nav-item nav-link">Home</a>
+
+                <div class="nav-item dropdown">
+                    <a href="{% url 'About' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{% url 'About' %}" class="btn btn-link dropdown-item">Overview</a>
+                        <a href=" {% url 'Mission' %}" class="btn btn-link dropdown-item">Mission and Vission</a>
+                        <a href=" {% url 'Powersfunctions' %}" class="btn btn-link dropdown-item">Powers and Functions</a>
+                        <a href=" {% url 'Demographic' %}" class="btn btn-link dropdown-item">Demographic Map</a>
+                        <a href=" {% url 'Testimonial' %}" class="btn btn-link dropdown-item">Testimonials</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">The Council</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href=" {% url 'Chairman' %}" class="btn btn-link dropdown-item">Office of the Chairman</a>
+                        <a href="{% url 'Clerk'  %}" class="btn btn-link dropdown-item">Office of the Clerk</a>
+                        <a href=" {% url 'Ceo' %}" class="btn btn-link dropdown-item">Office of the CEO</a>
+                         <a href=" {% url 'Council' %}" class="btn btn-link dropdown-item">Council Members</a>
+                         <a href=" {% url 'Planningdevelopment'%}" class="btn btn-link dropdown-item">Planning & Development</a>
+                         <a href=" {% url 'Budgetfinance'%}" class="btn btn-link dropdown-item">Budget and Finance</a>
+                    </div>  
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="{% url 'Services'  %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href=" {% url 'Service' %}" class="btn btn-link dropdown-item">Overview</a>
+                            <a href=" {% url 'Sanitation' %}" class="btn btn-link dropdown-item">Sanitation</a>
+                            <a href=" {% url 'Education'  %}" class="btn btn-link dropdown-item">Education</a>
+                            <a href="  {% url 'Health'%}" class="btn btn-link dropdown-item">Health</a>
+                            <a href="  {% url 'Community' %}" class="btn btn-link dropdown-item">Community</a>
+                             <a href="  {% url 'Agriculture' %}" class="btn btn-link dropdown-item">Agriculture</a>
+                             <a href=" {% url 'Lands' %}" class="dropdown-item">Land Development</a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <a href="{% url 'Ratestaxes' %}" class="nav-link" data-bs-toggle="">Rates & Taxes</a>
+                       
+                        </div>
+
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Latest News</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{% url 'Project' %}" class="btn btn-link dropdown-item">Our Projects</a>
+                    </div>
+                    </div>
+
+
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Partners</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href=" {% url 'Partners'%}" class="btn btn-link dropdown-item">National Partners</a>
+                        <a href=" {% url 'Intpartners' %}" class="btn btn-link dropdown-item">International Partners</a>
+                    </div>
+                    </div>
+
+
+                    <a href=" {% url 'Publications'%}" class="nav-item nav-link">Publications</a>
+                </div>
+                <a href=" {% url 'Contact'%}" class="btn btn-primary px-3 d-none d-lg-block" id="button-update">Contact</a>
+            </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+<!-- Page Header Start -->
+<div class="the-council page-header wow fadeIn" data-wow-delay="0.1s" id="header">
+<div class="container">
+            <h1 class="typed-text-output display-3 text-white animated slideInRight"></h1>
+            <div class="typed-text d-none"><h6 class="display-1 text-white mb-5 animated slideInRight" id="font"> Budget and Finance</h6></div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'Index' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'About' %}">The Council</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Budget & Finance</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+<!-- Features Start -->
+
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="row g-5">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-6 mb-5"></h1>
+                    <p class="mb-4" style="text-align: justify;">In the intricate machinery of Basse Area Council's progress, the Finance Director stands as the master clockmaker, a key architect who orchestrates the council's financial intricacies with meticulous precision to ensure efficient resource allocation and optimal fiscal management. In this critical role, the Finance Director not only acts as a steward of the council's financial health but also plays a pivotal role in translating the broader strategic aspirations set by the CEO into tangible and sustainable realities.
+                    The Finance Director's influence extends beyond the realms of mere budgetary oversight; they are a linchpin in the dynamic interplay between strategic vision and practical execution. By leveraging their profound financial expertise, the Finance Director crafts and refines the financial framework that underpins the council's development initiatives. This involves not only allocating resources judiciously but also identifying strategic investment opportunities that will catalyze growth and propel the council towards its overarching goals.</p>
+                    <div class="row g-3">
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.1s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
+                                    <img class="align-self-center mb-3" src="{% static 'img/icon/icon-23-primary.png' %}" alt="">
+                                    <h5 class="mb-0">Risk Management and Compliance</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.2s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div class="bg-white d-flex flex-column justify-content-center text-center rounded py-4 px-3">
+                                    <img class="align-self-center mb-3" src="{% static 'img/icon/icon-24-primary.png' %}" alt="">
+                                    <h5 class="mb-0">Financial Operations and Reporting</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.3s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div class="bg-white d-flex flex-column justify-content-center text-center rounded py-4 px-3">
+                                    <img class="align-self-center mb-3" src="img/icon/icon-25-primary.png" alt="">
+                                    <h5 class="mb-0">Financial Oversight and Accountability</h5>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-6 wow fadeIn" data-wow-delay="0.4s">
+                            <div class="bg-light rounded h-100 p-3">
+                                <div class="bg-white d-flex flex-column justify-content-center text-center rounded h-100 py-4 px-3">
+                                    <img class="align-self-center mb-3" src="i{% static 'img/icon/icon-26-primary.png' %}" alt="">
+                                    <h5 class="mb-0">Treasury Management </h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="position-relative rounded overflow-hidden h-100" style="min-height: 900px;">
+                        <img class="position-absolute " src="{% static 'img/finance.jpg' %}" alt="" style="object-fit: cover; width: 625px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Features End -->
+
+
+ <div class="container-xxl py-5" style="background: rgba(200,200,200, 0.2); max-width: 100%;">
+<div class="landing" id="landing">
+    <div class="container" >
+                <div class="col-md-8 mx-auto wow fadeInUp" data-wow-delay="0.1s">
+                    <p class="fw-medium text-uppercase mb-2" id="colour">Budget and Finance: Finance Director</p>
+                    <h1 class="display-5 mb-4" style="text-align: left;">A Comprehensive Rundown of Functions and Responsibilities of the Finance Director of BasseAC</h1>
+                    <p class="mb-4" style="text-align: justify;">Navigating the intricacies of local governance, the Director of Finance at the Basse Area Council plays a pivotal role in bridging financial expertise with community aspirations. This exploration aims to highlight the varied functions and responsibilities defining this role, offering insight into the crucial tasks involved in fostering fiscal sustainability and contributing to the overall development of the Basse community. With an unwavering commitment to impartiality, this overview seeks to portray the Director of Finance's integral role in enhancing the prosperity, inclusivity, and resilience of the Basse Area Council.</p>
+                    <h6 class="display-5 mb-1"> Budget Formulation:</h6>
+                    <p class="mb-4" style="text-align: justify;">At the heart of Basse's progress, the Finance Director wields the baton of budget formulation. This demanding dance of numbers transcends mere crunching, demanding a holistic understanding of the council's strategic vision. Through meticulous analysis of evolving community needs and priorities, they transform the budget into a potent instrument, aligning allocations with the council's grand symphony of development. Each expenditure becomes a deliberate note, harmonizing with infrastructure's robust bassline, education's soaring soprano, healthcare's nurturing cello, and social services' vibrant percussion. This dynamic role demands a conductor's foresight, anticipating challenges and seizing opportunities to fortify the council's financial foundation, ensuring every step towards progress resonates with purpose and sustainability.</p>
+                    <h6 class="display-5 mb-1"> Financial Planning: Beyond the Horizon</h6>
+                    <p class="mb-4" style="text-align: justify;"> The Director of Finance soars beyond the routine, engaging in strategic financial planning – the vital pillar supporting Basse's long-term growth. In a landscape marked by volatile dynamics, their role extends to proactive initiatives that position the council advantageously amidst uncertainties. This forward-looking perspective ensures the financial framework is not merely a reactive response but a proactive strategy, a meticulously crafted map guiding the council through uncharted financial terrain. Every projected scenario, every risk assessment becomes a vital compass point, charting a course towards sustainable development and navigating the council towards a future brimming with potential.</p>
+                    <h6 class="display-5 mb-1"> Resource Allocation:</h6>
+                    <p class="mb-4" style="text-align: justify;">The Director takes center stage in the nuanced art of resource allocation, a delicate ballet demanding a keen understanding of diverse departmental needs and project requirements. Every financial decision echoes with strategic intent, meticulously balancing the varied demands within the council to maximize impact. This multifaceted responsibility necessitates the wisdom of a seasoned choreographer, ensuring equitable distribution and optimal utilization of resources across sectors. Infrastructure's grand leaps, education's nurturing pirouettes, healthcare's graceful adagios, and social services' energetic jigs – each receives the resources it needs to harmonize with the council's collective progress, propelling Basse towards a future where every voice thrives.</p>
+                    <h6 class="display-5 mb-1"> Financial Reporting</h6>
+                    <p class="mb-4" style="text-align: justify;">Weaving transparency into the intricate tapestry of Basse's financial health, the Director takes center stage as the architect of meticulous reporting. Every document becomes a vibrant canvas, meticulously crafted with accurate data and clear communication. Financial reports, annual statements, and performance dashboards evolve from dry numbers into captivating narratives, illuminating the council's financial journey for a diverse audience. Citizens, government agencies, and stakeholders find their voices in this chorus of transparency, empowered by readily accessible information that builds trust and fosters deeper engagement with the council's fiscal path.</p>
+                    <h6 class="display-5 mb-1"> Internal Controls and Risk Management:</h6>
+                    <p class="mb-4" style="text-align: justify;"> As the vigilant protector of Basse's financial well-being, the Director weaves a robust system of internal controls, a watchful chorus that stands guard against fraud and mismanagement. Every transaction, every expenditure, receives a watchful eye, ensuring each dalasi resonates with integrity. Risk management strategies become a complementary counterpoint, identifying potential pitfalls and crafting proactive measures to mitigate them. This unwavering commitment to financial health ensures Basse's progress remains on a secure and responsible course, its every note echoing with the community's trust.</p>
+                    <h6 class="display-5 mb-1">Compliance and Regulations:</h6>
+                    <p class="mb-4" style="text-align: justify;">Navigating the intricate legal and regulatory landscape requires the nimble dexterity of a seasoned musician. The Director dances with every relevant regulation, donor reporting requirement, and internal council policy, ensuring the council's financial journey remains in perfect harmony with ethical and legal principles. This unwavering adherence to compliance forms the bedrock of responsible governance, safeguarding Basse's reputation and ensuring every fiscal step resonates with integrity.</p>
+                    <h6 class="display-5 mb-1"> Stakeholder Engagement and Communication:</h6>
+                    <p class="mb-4" style="text-align: justify;">Openness and inclusivity become the key signatures of the Director's communication symphony. Community forums, public meetings, and accessible financial reports all morph into engaging bridges, connecting the council with its stakeholders like vibrant threads weaving a tapestry of collaboration. Complex financial concepts are translated into clear melodies, sung with the warmth of genuine concern and the clarity of crystal-cut language, ensuring every resident can sing along in the chorus of progress. This commitment to open dialogue fosters trust, a bridge built brick by brick with each question answered and concern addressed, strengthening partnerships and empowering the community to become active participants in Basse's financial journey, their voices rising in unified support for a shared vision.</p>
+                    <h6 class="display-5 mb-1"> Collaboration and Partnerships:</h6>
+                    <p class="mb-4" style="text-align: justify;">Extending the financial composition beyond the council's borders, the Director embraces the power of collaboration, transforming the landscape into a grand orchestra of progress. Public-private partnerships become harmonious duets, weaving private sector expertise and resources into the fabric of Basse's development like a skilled musician interlacing intricate threads into a rich tapestry. Donor agencies join in as supportive counterpoints, their generosity adding depth and texture to the community's progress, each contribution resonating like a powerful brass section enriching the overall composition. International collaborations and joint ventures crescendo into vibrant movements, propelling the community towards shared goals and shared prosperity, ensuring every note sung by Basse echoes with the strength and unity of a global chorus.</p>
+                    <h6 class="display-5 mb-1"> Grant Acquisition and Donor Management:</h6>
+                    <p class="mb-4" style="text-align: justify;">Securing grants and fostering strategic donor relationships require the finesse of a master composer, weaving melodies of mutual benefit. The Director orchestrates compelling proposals, navigating intricate compliance requirements like a virtuoso navigating challenging scales. Each successful application blossoms into a triumphant aria, injecting vital resources into Basse's development journey. The Director meticulously cultivates and nurtures relationships with donors, ensuring mutually beneficial collaborations that resonate with Basse's aspirations and the donors' philanthropic goals, their partnership becoming a harmonious duet enriching the community's song.</p>
+                    <h6 class="display-5 mb-1"> Investment Analysis and Project Management::</h6>
+                    <p class="mb-4" style="text-align: justify;">Investment Analysis and Project Management:</p>
+                    <h6 class="display-5 mb-1"> Inclusive Representation and Communication Strategies:</h6>
+                    <p class="mb-4" style="text-align: justify;">As the official spokesperson for the council, the CEO's approach to communication strategies transcends the conventional to become an art of intentional inclusivity. Proactive engagement with media outlets is not a routine; it is a strategic effort to cultivate positive relationships and ensure accurate representation of the council's activities. The implementation of comprehensive community outreach programs is not a checklist; it is a deliberate effort to utilize various communication channels that resonate with residents from all walks of life. Leveraging digital communication strategies becomes an exploration of the virtual landscape to reach a broader audience, enhancing community engagement in a manner that reflects and respects the inherent diversity within the community.</p>
+                    <h6 class="display-5 mb-1"> Risk Management and Mitigation:</h6>
+                    <p class="mb-4" style="text-align: justify;">Ever vigilant, the Director plays the crucial role of risk manager, identifying potential challenges like a watchful sentinel scanning the horizon, and crafting proactive mitigation strategies like building sturdy floodwalls against potential storms. Every unforeseen obstacle becomes a discordant note, swiftly addressed through robust contingency plans and disaster preparedness measures like practiced maneuvers by a well-trained orchestra. The Director ensures the council remains resilient against economic downturns, natural disasters, and unforeseen circumstances, protecting Basse's financial well-being and minimizing the impact of potential disruptions like a shield guarding the community against harm, ensuring every note in the symphony of progress remains clear and vibrant.</p>
+                    <div class="row g-4">
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-square rounded-circle">
+                                    <i class="fa fa-phone-alt text-white"></i>
+                                </div>
+                                <div class="ms-4">
+                                    <h6>Call The Finance Director</h6>
+                                    <span>+220 7864131</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="d-flex">
+                                <div class="flex-shrink-0 btn-square rounded-circle">
+                                    <i class="fa fa-envelope text-white"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h6>Email The Finance Director</h6>
+                                    <span>finance@basse.gm</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+ <!-- Banner Start -->
+        <div class="banner wow zoomIn" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="section-header text-center">
+                    <p>Building Bridges, Fostering Growth, Shaping Minds</p>
+                    <h2>Together<span>Unite</span>Prosper</h2>  
+                </div>
+                <div class="container banner-text">
+                    <p>
+                        Welcome to the heart of progress, where community thrives, and futures are built. The Basse Area Council is committed to empowering our diverse communities through sustainable development and shared growth. 
+                    </p>
+                    <a class="btn" href="{% url 'Contact' %}" >Be In Touch</a>
+                </div>
+            </div>
+        </div>
+        <!-- Banner End -->
+
+
+
+
+   <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Basse Area Council</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mansajang Kunda Highway, Basse Santa Su, The Gambia</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+220 7864131</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@basse.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://twitter.com/AreaBasse" id="button-update"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/BASSEASC/" id="button-update"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="" id="button-update"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/company/basse-area-council/" id="button-update"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="{% url 'About'%}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'Contact'%}">Contact Us</a>
+                    <a class="btn btn-link" href="{% url 'Services'%}">Our Services</a>
+                    <a class="btn btn-link" href="{% url 'Publications'%}">Publications</a>
+                    <a class="btn btn-link" href="{% url 'Council' %}">Council Members</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Business Hours</h5>
+                    <p class="mb-1">Monday - Thursday</p>
+                    <h6 class="text-light">09:00 am - 04:00 pm</h6>
+                    <p class="mb-1">Friday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Sunday & Sunday</p>
+                    <h6 class="text-light">Closed</h6>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p>Sign Up to the Newsletter of the Council and receive regular updates on developments of the council</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" id="button-update">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container text-center">
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold btn btn-link" id="color" href="#">Basse Area Council</a>, All Right Reserved. <span class="year" id="currentYear"></span></p>
+             <p class="mb-0">Developed By <a class="fw-semi-bold btn btn-link" href="#" id="color">Tech Lab</a></p>
+        </div>
+    </div>
+    <div class="credit">
+        <p class="credit2"><b>Supported By: </b><a target="-blank" href="https://www.gambiaparticipates.org/"> <img class="credit-img" src="{% static 'img/gplogo.png' %}"></a> <a target="-blank" href="https://gm.usembassy.gov/"><img class="credit-img2" src="{% static 'img/US EMBASSY.jpg' %}"></a> </p>
+    </div>
+
+<script>
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+
+    // Update the content of the 'currentYear' span element in the footer
+    document.getElementById('currentYear').textContent = currentYear;
+</script>
+
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/typed/typed.min.js' %}"></script>
+    <script src="{% static 'lib/parallax/parallax.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+
+        function changeLanguage(languageCode) {
+            const element = document.querySelector('.goog-te-combo');
+            element.value = languageCode;
+            element.dispatchEvent(new Event('change'));
+        }
+    </script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

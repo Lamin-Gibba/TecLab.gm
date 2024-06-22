@@ -1,0 +1,423 @@
+{%load static %}
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basse.gm</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href="https://www.facebook.com/BASSEASC/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href="https://twitter.com/AreaBasse"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.linkedin.com/company/basse-area-council/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+       
+ <div id="google_translate_element" class="translate-select position-absolute top-0 start-50 translate-middle-x"></div>
+
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold">+220 7864131</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+        <a href="{% url 'Index' %}" class="navbar-brand ps-3 me-0">
+            <h1 class="text-white m-0" style="font-size: 22px; z-index: 1;">Basse Area Council</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-3 p-lg-0">
+                <a href="{% url 'Index' %}" class="nav-item nav-link">Home</a>
+
+                <div class="nav-item dropdown">
+                    <a href="{% url 'About' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{% url 'About' %}" class="btn btn-link dropdown-item">Overview</a>
+                        <a href=" {% url 'Mission' %}" class="btn btn-link dropdown-item">Mission and Vission</a>
+                        <a href=" {% url 'Powersfunctions' %}" class="btn btn-link dropdown-item">Powers and Functions</a>
+                        <a href=" {% url 'Demographic' %}" class="btn btn-link dropdown-item">Demographic Map</a>
+                        <a href=" {% url 'Testimonial' %}" class="btn btn-link dropdown-item">Testimonials</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">The Council</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href=" {% url 'Chairman' %}" class="btn btn-link dropdown-item">Office of the Chairman</a>
+                        <a href="{% url 'Clerk'  %}" class="btn btn-link dropdown-item">Office of the Clerk</a>
+                        <a href=" {% url 'Ceo' %}" class="btn btn-link dropdown-item">Office of the CEO</a>
+                         <a href=" {% url 'Council' %}" class="btn btn-link dropdown-item">Council Members</a>
+                         <a href=" {% url 'Planningdevelopment'%}" class="btn btn-link dropdown-item">Planning & Development</a>
+                         <a href=" {% url 'Budgetfinance'%}" class="btn btn-link dropdown-item">Budget and Finance</a>
+                    </div>  
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="{% url 'Services'  %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href=" {% url 'Service' %}" class="btn btn-link dropdown-item">Overview</a>
+                            <a href=" {% url 'Sanitation' %}" class="btn btn-link dropdown-item">Sanitation</a>
+                            <a href=" {% url 'Education'  %}" class="btn btn-link dropdown-item">Education</a>
+                            <a href="  {% url 'Health'%}" class="btn btn-link dropdown-item">Health</a>
+                            <a href="  {% url 'Community' %}" class="btn btn-link dropdown-item">Community</a>
+                             <a href="  {% url 'Agriculture' %}" class="btn btn-link dropdown-item">Agriculture</a>
+                             <a href=" {% url 'Lands' %}" class="dropdown-item">Land Development</a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <a href="{% url 'Ratestaxes' %}" class="nav-link" data-bs-toggle="">Rates & Taxes</a>
+                       
+                        </div>
+
+
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Latest News</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{% url 'Project' %}" class="btn btn-link dropdown-item">Our Projects</a>
+                    </div>
+                    </div>
+
+
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Partners</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href=" {% url 'Partners'%}" class="btn btn-link dropdown-item">National Partners</a>
+                        <a href=" {% url 'Intpartners' %}" class="btn btn-link dropdown-item">International Partners</a>
+                    </div>
+                    </div>
+
+
+                    <a href=" {% url 'Publications'%}" class="nav-item nav-link">Publications</a>
+                </div>
+                <a href=" {% url 'Contact'%}" class="btn btn-primary px-3 d-none d-lg-block" id="button-update">Contact</a>
+            </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+<!-- Page Header Start -->
+<div class="rates-header page-header wow fadeIn" data-wow-delay="0.1s" id="header">
+<div class="container">
+            <h1 class="typed-text-output display-3 text-white animated slideInRight"></h1>
+            <div class="typed-text d-none"><h6 class="display-1 text-white mb-5 animated slideInRight" id="font"> Rates and Taxes</h6></div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'Index' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'Ratestaxes' %}">Rates & Taxes</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Rates and Taxes</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+<!-- Rates and Taxes Section Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <!-- Rates Section -->
+            <div class="row g-5" id="rates">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" >
+                    <h1 class="display-6 mb-4">Rates</h1>
+                    <h5>Property Rates</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Basse Area Council's property rates are a crucial component of the municipality's fiscal strategy. The rates are calculated based on a thorough assessment of property values, ensuring a fair and equitable distribution of the tax burden among property owners. This revenue serves as the lifeblood for essential public services, including road maintenance, waste management, and the upkeep of public facilities such as parks and community centers. <br> The council employs a transparent and standardized method for property valuation, taking into account factors like location, property size, and amenities. Regular reassessments are conducted to reflect changes in property values, ensuring that the rates remain reflective of the current real estate landscape.
+                    </p>
+                    <h5>Business Rates</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        In fostering economic growth, Basse Area Council imposes business rates on commercial establishments. These rates contribute significantly to creating an environment conducive to business development. The revenue generated is channeled back into the community to support infrastructure projects that enhance the overall business climate, including the improvement of transportation networks and the development of commercial zones. <br>Business rates are structured to be fair, with considerations for the size and nature of the business. Start-ups and small enterprises may benefit from specific incentives or reduced rates to encourage entrepreneurship and stimulate local economic activity.
+                    </p>
+                    <h5>Service Rates</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                       Residents contribute to the upkeep of essential services through service rates, which cover the cost of water supply, sanitation, and street lighting. Basse Area Council is committed to maintaining high standards in service provision, ensuring that residents receive reliable and quality services. The revenue generated from service rates directly funds the ongoing maintenance and improvement of these critical services. <br> The council regularly engages with the community to assess service needs and explores innovative solutions to enhance service delivery. This collaborative approach helps in tailoring services to meet the evolving demands of the residents.
+                    </p>
+                    
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <!-- Add relevant images or graphics for the Rates section -->
+                    <img class="img-fluid" src="{% static 'img/rates.jpg' %}" alt="Rates Image">
+                </div>
+            </div>
+
+            <!-- Licenses Section -->
+            <div class="row g-5" id="licenses">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s" >
+                    <!-- Add relevant images or graphics for the Licenses section -->
+                    <img class="img-fluid" src="{% static 'img/license.jpg' %}" alt="Licenses Image">
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-6 mb-4">Licenses</h1>
+                    <h5>Business Licenses</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Obtaining a business license from Basse Area Council is a prerequisite for operating legally within the municipality. The licensing process is designed to be efficient and transparent, promoting a level playing field for businesses of all sizes. The revenue generated from business licenses is reinvested in initiatives that nurture the local business ecosystem, such as training programs, networking events, and business support services. <br> The council periodically reviews licensing requirements to ensure they align with the dynamic business landscape, making adjustments that foster entrepreneurship and innovation. Additionally, the council may provide resources and assistance to businesses to help them navigate the licensing process smoothly.
+                    </p>
+                    <h5>Permits</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        The issuance of permits is a vital aspect of Basse Area Council's regulatory framework. Whether it's for public events, construction projects, or special gatherings, obtaining a permit ensures that activities align with safety standards and community regulations. The council works closely with applicants to facilitate the permitting process, offering guidance on compliance and best practices. <br> Transparent communication regarding permit requirements and the application process is a priority for the council. This helps individuals and organizations understand the importance of permits in maintaining order and safety in the community.
+                    </p>
+
+                    <!-- Add more details and information about licenses -->
+                </div>
+                
+            </div>
+
+            <!-- Markets Section -->
+            <div class="row g-5" id="markets">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" >
+                    <h1 class="display-6 mb-4">Markets</h1>
+                    <h5>Market Operations</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Basse Area Council takes a proactive approach to oversee and enhance the operations of local markets. Markets are not just places of trade but integral economic hubs that connect producers with consumers. The council invests in market infrastructure, ensuring that facilities are modern, clean, and equipped to handle the diverse needs of vendors and buyers. <br>Market operations are guided by principles of inclusivity and fairness. The council works with market associations to address concerns, promote fair competition, and provide opportunities for local entrepreneurs. This collaborative approach fosters a vibrant marketplace that contributes to the economic prosperity of the entire community.
+                    </p>
+                     <h5>Market Regulations</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        To maintain a conducive and orderly marketplace, Basse Area Council establishes clear regulations for market participants. These regulations cover a spectrum of issues, including trading hours, waste management, and hygiene standards. Through regular inspections and community engagement, the council ensures that both vendors and consumers adhere to these regulations, creating a safe and enjoyable market environment. <br>Periodic reviews of market regulations are conducted to align them with changing needs and circumstances. This adaptability ensures that the regulations remain effective in promoting fair practices and the well-being of all market stakeholders.
+                    </p>
+                    <!-- Add more details and information about licenses -->
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <!-- Add relevant images or graphics for the Licenses section -->
+                    <img class="img-fluid" src="{% static 'img/markets.jpg ' %}" alt="Licenses Image">
+                </div>
+            </div>
+
+            <!-- Fines Section -->
+            <div class="row g-5" id="fines">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s" >
+                    <!-- Add relevant images or graphics for the Licenses section -->
+                    <img class="img-fluid" src="{% static 'img/fines.jpg' %}" alt="Licenses Image">
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-6 mb-4">Fines</h1>
+                    <h5>Regulatory Fines</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        In its commitment to community well-being, Basse Area Council imposes fines for violations of local regulations. These fines serve as deterrents against activities that may be detrimental to the environment or disrupt community harmony. The council employs a fair and transparent enforcement process, providing avenues for individuals to rectify non-compliance before fines are levied. <br> Revenue generated from regulatory fines is earmarked for initiatives aimed at enhancing community welfare. This includes investments in environmental conservation, public awareness campaigns, and projects that address specific issues highlighted by the community.
+                    </p>
+                     <h5>Traffic Fines</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Ensuring road safety is a top priority for Basse Area Council. Traffic fines are imposed for violations of road safety regulations, such as speeding, improper parking, and reckless driving. The revenue generated from traffic fines is channeled into road maintenance, traffic management infrastructure, and public awareness campaigns to promote responsible driving behavior. <br> The council collaborates with law enforcement agencies to ensure the fair and consistent application of traffic fines. Additionally, educational programs are implemented to raise awareness about the importance of road safety within the community.
+                    </p>
+                    <!-- Add more details and information about licenses -->
+                </div>
+                
+            </div>
+
+            <!-- Depts -->
+           <div class="row g-5" id="depts">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s" id="depts">
+                    <h1 class="display-6 mb-4">Depts</h1>
+                    <h5>Debt Management</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Basse Area Council adopts a responsible and strategic approach to debt management. The council incurs debts judiciously, prioritizing projects that have a lasting positive impact on the community. Rigorous financial planning precedes any borrowing, with a focus on securing favorable terms and ensuring that the repayment schedule aligns with the municipality's financial capacity. <br> Transparent communication about debt management is a cornerstone of the council's financial governance. Regular updates and reports are shared with the community, outlining how borrowed funds are being utilized and the anticipated benefits to the community.
+                    </p>
+                    <h5>Financial Planning</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Financial planning at Basse Area Council involves a comprehensive assessment of the community's present and future needs. This includes infrastructure requirements, service enhancements, and economic development initiatives. The council collaborates with financial experts and engages with the community to develop budgets that reflect the priorities and aspirations of residents. <br> Residents are invited to participate in public forums and consultations to provide input into the budgeting process. This participatory approach ensures that financial planning is inclusive and responsive to the diverse needs of the community.
+                    </p>
+                    <!-- Add more details and information about licenses -->
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <!-- Add relevant images or graphics for the Licenses section -->
+                    <img class="img-fluid" src="{% static 'img/depts.jpg' %}" alt="Licenses Image">
+                </div>
+            </div>
+
+            <!-- Lands -->
+
+             <div class="row g-5" id="lands">
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.5s" >
+                    <!-- Add relevant images or graphics for the Licenses section -->
+                    <img class="img-fluid" src="{% static 'img/lands.jpg' %}" alt="Licenses Image">
+                </div>
+                <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <h1 class="display-6 mb-4">Lands</h1>
+                    <h5>Land-Use Planning</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Land-use planning at Basse Area Council is a dynamic and collaborative process involving urban planners, environmental experts, and community stakeholders. Comprehensive plans are developed to guide the municipality's growth, considering factors like population dynamics, environmental sustainability, and economic trends. The council prioritizes public participation, conducting hearings, workshops, and surveys to integrate community values into the planning framework.
+                    </p>
+                    <h5>Land Regulations</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Basse Area Council's land regulations aim to balance property owners' interests with sustainable development goals. Covering building codes, zoning requirements, and environmental impact assessments, these regulations prioritize transparent communication. The council regularly updates regulations based on urban planning advancements, environmental considerations, and community feedback to ensure relevance and effectiveness.
+                    </p>
+                    <h5>Land Management</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        Efficient and equitable land management is a core function. The council oversees public lands, facilitates responsible transactions, resolves disputes, and preserves culturally or ecologically significant areas. Land actuation, involving transparent allocation for specific purposes, follows principles of sustainable development. Land transfer processes adhere to clear guidelines, enhancing transparency and efficiency.
+                    </p>
+                    <h5>Land Transfers</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        The council facilitates land transfers through clear and standardized procedures. Transparent guidelines govern the transfer of land ownership, ensuring fairness and legality. This process involves thorough documentation, verification, and public disclosure to maintain transparency and prevent any irregularities. The goal is to streamline land transfer processes, promoting responsible and lawful transactions.
+                    </p>
+                    <h5>Conflict Resolution</h5>
+                    <p class="mb-4" style="text-align: justify;">
+                        In dispute resolution, the council mediates conflicts related to land ownership and use. Transparent mechanisms ensure fair and timely resolutions, aligning with the goal of creating a community where property rights are respected. Preservation of culturally or ecologically significant areas is a priority, reflecting the council's commitment to safeguarding natural and cultural heritage. <br> Basse Area Council's land management policies emphasize transparency, fairness, and sustainability. Active community involvement, balanced regulations, efficient management, and streamlined land transfer processes contribute to creating a resilient and thriving municipality.
+                    </p>
+                    <!-- Add more details and information about licenses -->
+                </div>
+                
+            </div>
+
+        </div>
+    </div>
+    <!-- Rates and Taxes Section End -->
+
+
+
+
+
+
+        <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Basse Area Council</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mansajang Kunda Highway, Basse Santa Su, The Gambia</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+220 7864131</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@basse.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://twitter.com/AreaBasse" id="button-update"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/BASSEASC/" id="button-update"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="" id="button-update"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/company/basse-area-council/" id="button-update"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="{% url 'About'%}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'Contact'%}">Contact Us</a>
+                    <a class="btn btn-link" href="{% url 'Services'%}">Our Services</a>
+                    <a class="btn btn-link" href="{% url 'Publications'%}">Publications</a>
+                    <a class="btn btn-link" href="{% url 'Council' %}">Council Members</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Business Hours</h5>
+                    <p class="mb-1">Monday - Thursday</p>
+                    <h6 class="text-light">09:00 am - 04:00 pm</h6>
+                    <p class="mb-1">Friday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Sunday & Sunday</p>
+                    <h6 class="text-light">Closed</h6>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p>Sign Up to the Newsletter of the Council and receive regular updates on developments of the council</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" id="button-update">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container text-center">
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold btn btn-link" id="color" href="#">Basse Area Council</a>, All Right Reserved. <span class="year" id="currentYear"></span></p>
+             <p class="mb-0">Developed By <a class="fw-semi-bold btn btn-link" href="#" id="color">Tech Lab</a></p>
+        </div>
+    </div>
+    <div class="credit">
+        <p class="credit2"><b>Supported By: </b><a target="-blank" href="https://www.gambiaparticipates.org/"> <img class="credit-img" src="{% static 'img/gplogo.png' %}"></a> <a target="-blank" href="https://gm.usembassy.gov/"><img class="credit-img2" src="{% static 'img/US EMBASSY.jpg' %}"></a> </p>    </div>
+    </div>
+
+<script>
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+
+    // Update the content of the 'currentYear' span element in the footer
+    document.getElementById('currentYear').textContent = currentYear;
+</script>
+
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/typed/typed.min.js' %}"></script>
+    <script src="{% static 'lib/parallax/parallax.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+
+        function changeLanguage(languageCode) {
+            const element = document.querySelector('.goog-te-combo');
+            element.value = languageCode;
+            element.dispatchEvent(new Event('change'));
+        }
+    </script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>

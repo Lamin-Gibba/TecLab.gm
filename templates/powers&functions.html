@@ -1,0 +1,435 @@
+{%load static %}
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basse.gm</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href="https://www.facebook.com/BASSEASC/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href="https://twitter.com/AreaBasse"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.linkedin.com/company/basse-area-council/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+       
+ <div id="google_translate_element" class="translate-select position-absolute top-0 start-50 translate-middle-x"></div>
+
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold">+220 7864131</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+        <a href="{% url 'Index' %}" class="navbar-brand ps-3 me-0">
+            <h1 class="text-white m-0" style="font-size: 22px; z-index: 1;">Basse Area Council</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-3 p-lg-0">
+                <a href="{% url 'Index' %}" class="nav-item nav-link">Home</a>
+
+                <div class="nav-item dropdown">
+                    <a href="{% url 'About' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{% url 'About' %}" class="btn btn-link dropdown-item">Overview</a>
+                        <a href=" {% url 'Mission' %}" class="btn btn-link dropdown-item">Mission and Vission</a>
+                        <a href=" {% url 'Powersfunctions' %}" class="btn btn-link dropdown-item">Powers and Functions</a>
+                        <a href=" {% url 'Demographic' %}" class="btn btn-link dropdown-item">Demographic Map</a>
+                        <a href=" {% url 'Testimonial' %}" class="btn btn-link dropdown-item">Testimonials</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">The Council</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href=" {% url 'Chairman' %}" class="btn btn-link dropdown-item">Office of the Chairman</a>
+                        <a href="{% url 'Clerk'  %}" class="btn btn-link dropdown-item">Office of the Clerk</a>
+                        <a href=" {% url 'Ceo' %}" class="btn btn-link dropdown-item">Office of the CEO</a>
+                         <a href=" {% url 'Council' %}" class="btn btn-link dropdown-item">Council Members</a>
+                         <a href=" {% url 'Planningdevelopment'%}" class="btn btn-link dropdown-item">Planning & Development</a>
+                         <a href=" {% url 'Budgetfinance'%}" class="btn btn-link dropdown-item">Budget and Finance</a>
+                    </div>  
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="{% url 'Services'  %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href=" {% url 'Service' %}" class="btn btn-link dropdown-item">Overview</a>
+                            <a href=" {% url 'Sanitation' %}" class="btn btn-link dropdown-item">Sanitation</a>
+                            <a href=" {% url 'Education'  %}" class="btn btn-link dropdown-item">Education</a>
+                            <a href="  {% url 'Health'%}" class="btn btn-link dropdown-item">Health</a>
+                            <a href="  {% url 'Community' %}" class="btn btn-link dropdown-item">Community</a>
+                             <a href="  {% url 'Agriculture' %}" class="btn btn-link dropdown-item">Agriculture</a>
+                             <a href=" {% url 'Lands' %}" class="dropdown-item">Land Development</a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <a href="{% url 'Ratestaxes' %}" class="nav-link" data-bs-toggle="">Rates & Taxes</a>
+                       
+                        </div>
+
+
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Latest News</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{% url 'Project' %}" class="btn btn-link dropdown-item">Our Projects</a>
+                    </div>
+                    </div>
+
+
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Partners</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href=" {% url 'Partners'%}" class="btn btn-link dropdown-item">National Partners</a>
+                        <a href=" {% url 'Intpartners' %}" class="btn btn-link dropdown-item">International Partners</a>
+                    </div>
+                    </div>
+
+
+                    <a href=" {% url 'Publications'%}" class="nav-item nav-link">Publications</a>
+                </div>
+                <a href=" {% url 'Contact'%}" class="btn btn-primary px-3 d-none d-lg-block" id="button-update">Contact</a>
+            </div>
+    </nav>
+    <!-- Navbar End -->
+
+    <!-- Page Header Start -->
+<div class="mv-header page-header wow fadeIn" data-wow-delay="0.1s" id="header">
+<div class="container">
+            <h1 class="typed-text-output display-3 text-white animated slideInRight"></h1>
+            <div class="typed-text d-none"><h6 class="display-1 text-white mb-5 animated slideInRight" id="font"> Mission and Vission of BsAC</h6></div>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb animated slideInRight mb-0">
+                    <li class="breadcrumb-item"><a href="{% url 'Index' %}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{% url 'About' %}">About</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Mission and Vission</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+</div>
+<!-- Page Header End -->
+
+
+
+<div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
+<div class="wow fadeInUpn mandv" data-wow-delay="0.4s">
+    <p class="mvheading" style="text-align: center;"> <u class="mvheader">POWERS OF BASSE AREA COUNCIL</u></p>
+    <p class="mvheading" style="text-align: center; font-size: 22px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"><u>General Powers (Section 48)</u></p>
+    <p style="text-align:center;" >
+        <ol style="font-family:Gill Sans Extrabold ; font-size: 17px;" class="mvcontent">
+            <li>Exercise all political and executive powers (including financial autonomy) and functions; </li>
+            <li>Provide services as it deems fit; </li>
+            <li>Promote on a sound basis community development and self-help; </li>
+            <li>Maintains the power to perform such functions as are necessary to facilitate, or are conducive or
+                incidental to, the discharge of any of its function; </li>
+            <li>Protect the Constitution and other laws of The Gambia and promote democratic governance; </li>
+            <li>Ensure implementation and compliance with Government policy. </li>
+            <li>Any additional functions and services specified under Part II of Schedule II of the Act.</li>
+        </ol>
+    </p>
+</div> 
+</div>
+
+
+<div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
+<div class="wow fadeInUpn mandv" data-wow-delay="0.4s">
+     <p class="mvheading" style="text-align: center; font-size: 22px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"><u>Legislative Powers (Section 54-60)</u></p>
+    <p style="text-align:center;">
+        <ol style="font-family:Gill Sans Extrabold ; font-size: 17px;" class="mvcontent">
+            <li>A Council shall have powers to make laws consistent with the Constitution or any other law
+                made by the National Assembly. These by-laws shall be for the purposes of creating offences,
+                penalties, fees, etc. for services and guidance for committees (local, district, ward or village).</li><br>
+            <li>The bye-laws may be applied to the whole or only part of the LGA or to a particular section of
+                the people or a profession.</li>
+        </ol>
+    </p>
+</div> 
+</div>
+
+
+
+<div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
+<div class="wow fadeInUpn mandv" data-wow-delay="0.4s">
+     <p class="mvheading" style="text-align: center; font-size: 22px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"><u>Miscellaneous Powers (Sections 86-89)</u></p>
+    <p style="text-align:center;" >
+        <ol style="font-family:Gill Sans Extrabold ; font-size: 17px;" class="mvcontent">
+            <li>A Council may make Standing Orders for contractual purposes in accordance with tender rules
+                prescribed under the Local Government in accordance with the relevant provisions of this Act;.</li>
+            <li>A Council may make Standing Orders for contractual purposes in accordance with tender rules
+                prescribed under the Local Government in accordance with the relevant provisions of this Act;</li>
+                <li>Accept, hold or administer gifts of property in line with its powers and functions;</li>
+                <li>Provision of information to the public about its services through suitable media.</li>
+        </ol>
+    </p>
+</div> 
+</div>
+
+
+
+<!-- Functions -->
+
+<div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
+<div class="wow fadeInUpn mandv" data-wow-delay="0.4s">
+     <p class="mvheading" style="text-align: center; font-size: 22px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"<p class="mvheading" style="text-align: center;"> <u>FUNCTIONS OF BASSE AREA COUNCIL</u></p>
+    <p class="mvheading" style="text-align: center; font-size: 20px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"><I>BsAC and other Councils are mandated to provide the following services after agreeing with the
+    responsible government ministry/department and provided it has the capacity to do so:</I></p>
+
+    <p class="mvheading" style="font-size: 22px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"><u></u></p>
+    <p style="text-align:center;">
+    <ol class="mvcontent" style="font-family:Gill Sans Extrabold ; font-size: 17px;">
+    <li style="margin-top: 15px;">EDUCATION</li>
+    <ol style="list-style-type: lower-alpha;">
+        <li>Establish and manage or encourage and ensure the establishment and management of
+            educational services at the ECD, lower basic, upper basic and senior secondary levels in
+            accordance with the Education Act and national policy guidelines</li>
+        <li>Encourage the establishment of income generating and skills enhancing
+            projects/programmes in these educational institutions</li>
+        <li>Take full responsibility for the management of existing schools in the BsAC after its
+            transfer through an order published in the Gazette by the responsible Minister and other
+            functions prescribed by the responsible Minister</li>
+    </ol>
+ 
+        <li>Provision of agricultural services (extension services and centres, promotion of research and
+                planning, contribute to research funding, participate in policy planning and formulation, support
+                producer associations and other functions as may be assigned by relevant authorities); </li>
+        <li>Sustainable management of the environment and natural resources and any other functions
+                transferred or assigned to it; </li>
+        <li>Management of major health centres, sub-dispensaries, all primary health care services including
+                maternal and child health services, distribution of pharmaceutical products and vaccines to health
+                facilities and general hygiene and sanitation in accordance with the Public Health Act, related
+                regulations and national policies; </li>
+        <li>Management of major health centres, sub-dispensaries, all primary health care services including
+                maternal and child health services, distribution of pharmaceutical products and vaccines to health
+                facilities and general hygiene and sanitation in accordance with the Public Health Act, related
+                regulations and national policies;</li>
+        <li>Provision of offices and other structures for work or related purposes;</li>
+        <li>Acquisition (including compulsory acquisition), appropriation and disposal of land in accordance
+                    with the relevant act;</li>
+        <li>Undertaking planning and implementation of development projects/programmes including the
+                coordination of donor support and approval of all project agreements within its jurisdiction
+                through the incorporation of ward development plans and involvement of its people;</li>
+        <li>The establishment, registration, removal of members and dissolution of Village and Ward
+                Development and Technical Advisory Committees.</li>        
+        </ol>
+    </p>
+</div> 
+</div>
+
+
+<div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
+<div class="wow fadeInUpn mandv" data-wow-delay="0.4s">
+     <p class="mvheading" style="text-align: center; font-size: 22px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"><u>Other powers of BsAC are derived from Sections 8, 12, 14, 20 and 23 of the Finance and Audit Act,
+    2004 and include the following:</u></p>
+    <p style="text-align:center;">
+        <ol style="font-family:Gill Sans Extrabold ; font-size: 17px;" class="mvcontent">
+            <li>The right and obligation to formulate, approve and implement its budgets and that priority shall
+                always be accorded to national priority programme areas;</li>
+            <li>Subject to the provisions of this and other Acts, BsAC shall have financial autonomy over
+                financial matters;</li>
+            <li>Borrow (raise loans or overdrafts) to discharge its functions from time to time with the prior
+                approval of the Secretary of State;</li>
+            <li>Levy rates and taxes including licensing fees within URR except licensing fees within the Tourism
+                Development sector.</li>
+        </ol>
+    </p>
+</div> 
+</div>
+
+
+<div class="container-fluid facts my-5 py-5" data-parallax="scroll" data-image-src="img/carousel-1.jpg">
+<div class="wow fadeInUpn mandv" data-wow-delay="0.4s">
+     <p class="mvheading" style="text-align: center; font-size: 22px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"><u>Other Critical Legal and Policy Framework</u></p>
+     <p class="mvheading" style="text-align: center; font-size: 20px; letter-spacing: 1px; font-family: Gill Sans Extrabold;"><I>The following includes critical legal and policy documents which affect the effective functioning of BsAC
+    and thus have been reviewed to ensure that there is coherence and correspondence within BsAC, and
+    between BsAC and other sectors:</I></p>
+    <p style="text-align:center;" >
+        <ol style="font-family:Gill Sans Extrabold ; font-size: 17px;" class="mvcontent">
+            <li>The National Development Plan (NDP) 2018;</li>
+            <li>The Gambia Action Plan for Decentralisation and Local Government Development, 2015-2019;</li>
+                <li>The Gambia National Policy for Decentralisation and Local Development, 2015-2024;</li>
+                <li>The Constitution of The Gambia, 1997;</li>
+                <li>Revised National Youth Policy 2016-2018;</li>
+                <li>National Youth Service Scheme Act 2015;</li>
+                <li>Programme for Accelerated Growth & Employment (PAGE);</li>
+                <li>The Gambia Tourism Board Act, 2011;</li>
+                <li>The Gambia Livestock Marketing Agency Act, 2008</li>
+                <li>National Roads Authority Act, 2003;</li>
+                <li>The Children’s Act, 2005;</li>
+                <li>Women’s Act, 2010;</li>
+                <li>National Environment Agency (NEMA) Act, 1994;</li>
+                <li>National Health Care Waste Management Plan, 2014;</li>
+                <li>MOLRG Draft Strategic Plan, 2015-2019;</li>
+                <li>Local Government Service Commission Regulations;</li>
+                <li>Climate Change Policy;</li>
+                <li>Agriculture and Natural Resource Policy, 2009-2015</li>
+                <li>Gambia National Agricultural Investment Programme, 2010-2015.</li>
+                <li>Schemes of Service For The Local Government Service.</li>
+        </ol>
+    </p>
+</div> 
+</div>
+
+    
+
+
+
+      <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Basse Area Council</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mansajang Kunda Highway, Basse Santa Su, The Gambia</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+220 7864131</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@basse.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://twitter.com/AreaBasse" id="button-update"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/BASSEASC/" id="button-update"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="" id="button-update"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/company/basse-area-council/" id="button-update"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="{% url 'About'%}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'Contact'%}">Contact Us</a>
+                    <a class="btn btn-link" href="{% url 'Services'%}">Our Services</a>
+                    <a class="btn btn-link" href="{% url 'Publications'%}">Publications</a>
+                    <a class="btn btn-link" href="{% url 'Council' %}">Council Members</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Business Hours</h5>
+                    <p class="mb-1">Monday - Thursday</p>
+                    <h6 class="text-light">09:00 am - 04:00 pm</h6>
+                    <p class="mb-1">Friday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Sunday & Sunday</p>
+                    <h6 class="text-light">Closed</h6>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p>Sign Up to the Newsletter of the Council and receive regular updates on developments of the council</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" id="button-update">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container text-center">
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold btn btn-link" id="color" href="#">Basse Area Council</a>, All Right Reserved. <span class="year" id="currentYear"></span></p>
+             <p class="mb-0">Developed By <a class="fw-semi-bold btn btn-link" href="#" id="color">Tech Lab</a></p>
+        </div>
+    </div>
+    <div class="credit">
+        <p class="credit2"><b>Supported By: </b><a target="-blank" href="https://www.gambiaparticipates.org/"> <img class="credit-img" src="{% static 'img/gplogo.png' %}"></a> <a target="-blank" href="https://gm.usembassy.gov/"><img class="credit-img2" src="{% static 'img/US EMBASSY.jpg' %}"></a> </p>    </div>
+    </div>
+
+<script>
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+
+    // Update the content of the 'currentYear' span element in the footer
+    document.getElementById('currentYear').textContent = currentYear;
+</script>
+
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/typed/typed.min.js' %}"></script>
+    <script src="{% static 'lib/parallax/parallax.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+
+        function changeLanguage(languageCode) {
+            const element = document.querySelector('.goog-te-combo');
+            element.value = languageCode;
+            element.dispatchEvent(new Event('change'));
+        }
+    </script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+
+</html>

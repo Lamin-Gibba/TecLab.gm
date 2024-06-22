@@ -1,0 +1,519 @@
+{%load static %}
+ <!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Basse.gm</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;500;600&family=Rubik:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+   
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" role="status" style="width: 3rem; height: 3rem;"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-dark px-0">
+        <div class="row g-0 d-none d-lg-flex">
+            <div class="col-lg-6 ps-5 text-start">
+                <div class="h-100 d-inline-flex align-items-center text-white">
+                    <span>Follow Us:</span>
+                    <a class="btn btn-link text-light" href="https://www.facebook.com/BASSEASC/"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-link text-light" href="https://twitter.com/AreaBasse"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-link text-light" href="https://www.linkedin.com/company/basse-area-council/"><i class="fab fa-linkedin-in"></i></a>
+                    <a class="btn btn-link text-light" href=""><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+
+       
+ <div id="google_translate_element" class="translate-select position-absolute top-0 start-50 translate-middle-x"></div>
+
+            <div class="col-lg-6 text-end">
+                <div class="h-100 topbar-right d-inline-flex align-items-center text-white py-2 px-5">
+                    <span class="fs-5 fw-bold me-2"><i class="fa fa-phone-alt me-2"></i>Call Us:</span>
+                    <span class="fs-5 fw-bold">+220 7864131</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+
+    <!-- Navbar Start -->
+    <nav class="navbar navbar-expand-lg bg-white navbar-light sticky-top py-0 pe-5">
+        <a href="{% url 'Index' %}" class="navbar-brand ps-3 me-0">
+            <h1 class="text-white m-0" style="font-size: 22px; z-index: 1;">Basse Area Council</h1>
+        </a>
+        <button type="button" class="navbar-toggler me-0" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto p-3 p-lg-0">
+                <a href="{% url 'Index' %}" class="nav-item nav-link">Home</a>
+
+                <div class="nav-item dropdown">
+                    <a href="{% url 'About' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">About</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{% url 'About' %}" class="btn btn-link dropdown-item">Overview</a>
+                        <a href=" {% url 'Mission' %}" class="btn btn-link dropdown-item">Mission and Vission</a>
+                        <a href=" {% url 'Powersfunctions' %}" class="btn btn-link dropdown-item">Powers and Functions</a>
+                        <a href=" {% url 'Demographic' %}" class="btn btn-link dropdown-item">Demographic Map</a>
+                        <a href=" {% url 'Testimonial' %}" class="btn btn-link dropdown-item">Testimonials</a>
+                    </div>
+                </div>
+
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">The Council</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href=" {% url 'Chairman' %}" class="btn btn-link dropdown-item">Office of the Chairman</a>
+                        <a href="{% url 'Clerk'  %}" class="btn btn-link dropdown-item">Office of the Clerk</a>
+                        <a href=" {% url 'Ceo' %}" class="btn btn-link dropdown-item">Office of the CEO</a>
+                         <a href=" {% url 'Council' %}" class="btn btn-link dropdown-item">Council Members</a>
+                         <a href=" {% url 'Planningdevelopment'%}" class="btn btn-link dropdown-item">Planning & Development</a>
+                         <a href=" {% url 'Budgetfinance'%}" class="btn btn-link dropdown-item">Budget and Finance</a>
+                    </div>  
+                    </div>
+
+                    <div class="nav-item dropdown">
+                        <a href="{% url 'Services'  %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Services</a>
+                        <div class="dropdown-menu bg-light m-0">
+                            <a href=" {% url 'Service' %}" class="btn btn-link dropdown-item">Overview</a>
+                            <a href=" {% url 'Sanitation' %}" class="btn btn-link dropdown-item">Sanitation</a>
+                            <a href=" {% url 'Education'  %}" class="btn btn-link dropdown-item">Education</a>
+                            <a href="  {% url 'Health'%}" class="btn btn-link dropdown-item">Health</a>
+                            <a href="  {% url 'Community' %}" class="btn btn-link dropdown-item">Community</a>
+                             <a href="  {% url 'Agriculture' %}" class="btn btn-link dropdown-item">Agriculture</a>
+                             <a href=" {% url 'Lands' %}" class="dropdown-item">Land Development</a>
+                        </div>
+                    </div>
+
+                    <div class="">
+                        <a href="{% url 'Ratestaxes' %}" class="nav-link" data-bs-toggle="">Rates & Taxes</a>
+                       
+                        </div>
+
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Latest News</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href="{% url 'Project' %}" class="btn btn-link dropdown-item">Our Projects</a>
+                    </div>
+                    </div>
+
+
+                    <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Partners</a>
+                    <div class="dropdown-menu bg-light m-0">
+                        <a href=" {% url 'Partners'%}" class="btn btn-link dropdown-item">National Partners</a>
+                        <a href=" {% url 'Intpartners' %}" class="btn btn-link dropdown-item">International Partners</a>
+                    </div>
+                    </div>
+
+
+                    <a href=" {% url 'Publications'%}" class="nav-item nav-link">Publications</a>
+                </div>
+                <a href=" {% url 'Contact'%}" class="btn btn-primary px-3 d-none d-lg-block" id="button-update">Contact</a>
+            </div>
+    </nav>
+    <!-- Navbar End -->
+
+
+<!-- Header Start-->
+        <div class="lands-header" id="header">
+            <div class="container">
+                <h1 class="typed-text-output d-inline text-white mb-5 animated slideInRight" id="font"></h1>
+                <div class="typed-text d-none"><h6 class="display-1 text-white mb-5 animated slideInRight" id="font">Land Development Services of The Council - LAND DEVELOPMENT</h6></div>
+            </div>
+        </div>
+<!-- Header End-->   
+
+  <!-- Top Feature Start -->
+    <div class="container-fluid top-feature py-5 pt-lg-0">
+        <div class="container py-5 pt-lg-0">
+            <div class="row gx-0">
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.1s">
+                    <div class="bg-white d-flex align-items-center h-100 px-5" style="min-height: 160px;" id="shadow">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-map"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Land Use Planning</h4>
+                                <span>Dedicated zones for industrial development & logistics hubs</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.3s">
+                    <div class="bg-white d-flex align-items-center h-100 px-5" style="min-height: 160px;" id="shadow">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-industry"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Community Land Leasing</h4>
+                                <span> Responsible leasing of public lands for community-driven projects.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow fadeIn" data-wow-delay="0.5s">
+                    <div class="bg-white d-flex align-items-center h-100 px-5" style="min-height: 160px;" id="shadow">
+                        <div class="d-flex">
+                            <div class="flex-shrink-0 btn-lg-square rounded-circle bg-light">
+                                <i class="fa fa-handshake"></i>
+                            </div>
+                            <div class="ps-3">
+                                <h4>Land Transfer Liaison</h4>
+                                <span>Assist community members on transparence land transfer process.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Top Feature End -->
+
+<div class="container-fluid facts quote my-5 py-5" data-parallax="scroll" data-image-src="img/land-2.jpeg">
+<!-- Features Start -->
+<div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 800px;">
+                <h1 class="display-5 mb-5 text-white" >Embrace the Epicenter of Land Management Initiatives in Basse Area Councils</h1>
+                <p class="fs-5 fw-bold text-white" id="colour">Explore the core of land stewardship in Basse Area Councils, where the Council is devoted to nurturing a dynamic environment that empowers residents and strengthens our ties to the land. Uncover the array of initiatives embarked upon by the council, shaping sustainable land practices and enhancing the standards of land management in Basse.</p>
+    </div>
+</div>
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="row g-5 align-items-center">
+            <div class="col-lg-6 wow fadeInUp" data-wow-delay="0.1s">
+                <p class="fs-5 fw-bold" id="colour">Forging the Path of Sustainable Land Management in Basse Area Council</p>
+                <h1 class="display-5 mb-4">Harmonizing Practices in Land Stewardship</h1> </p>
+                <ul style="color: #15233C;">
+                <li style="text-align: justify;">Land initiatives serve as the cornerstone, weaving a legacy that propels our community towards thriving sustainability. The Basse Area Council takes immense pride in cultivating this heritage of land dedication, ensuring not only its preservation but also its dynamic evolution. Our commitment to land excellence is deeply rooted in the belief that access to sustainable practices is essential for personal empowerment and the collective advancement of our community.</li><br>
+
+                <li style="text-align: justify;">In the face of resource constraints, our land initiatives resonate with an unwavering dedication to shaping contemporary land landscapes. Acknowledging the developmental challenges, the council strives to enhance existing facilities, aspiring to provide sustainable practices. Thoughtful enhancements create an environment conducive to efficient land practices, with the aim of offering residents spaces that inspire conservation, foster innovation, and instill a commitment to land well-being.</li> <br>
+
+                <li style="text-align: justify;"> This dedication reaches beyond the boundaries of land centers. Through innovative land awareness campaigns, workshops, and training sessions, we proactively involve residents, families, and the broader community. The Basse Area Council envisions land services as a holistic venture, fostering not only service excellence but also environmental sustainability and community unity. Together, we are shaping the next phase of Basse's land legacy, guaranteeing that each individual has the tools and opportunities to lead a sustainable life and make a meaningful contribution to our shared land destiny.</li>
+            </ul>
+
+                <a class="btn btn-primary py-3 px-4" target="_blank" href="{% url 'Contact' %}" id="button-update">Be In Touch</a>
+            </div>
+            <div class="col-lg-6">
+                <div class="row g-4 align-items-stretch">
+                    <!-- First "Separate Your Waste" section -->
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="service2-item rounded d-flex">
+                        <div class="service2-text text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                            <div class="service2-img rounded">
+                                <img class="img-fluid" src="{% static 'img/water.jpg' %}" alt="">
+                            </div>
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                                <i class="fa fa-smog fa-3x" id="colour"></i>
+                            </div>
+                            <h4 class="mb-0">Watershed Management & Pollution Control</h4><br>
+                            <p>Implement measures to prevent water pollution, conserve freshwater resources, and protect aquatic ecosystems.</p>
+                        </div>
+                    </div>
+                </div>
+                    <!-- First "Modern Equipment" section -->
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-text text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                            <div class="service2-img rounded">
+                                <img class="img-fluid" src="{% static 'img/land-planning.jpg' %}" alt="">
+                            </div>
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                                <i class="fa fa-layer-group fa-3x" id="colour"></i>
+                            </div>
+                            <h4 class="mb-0">Land Use Planning and Zoning</h4><br>
+                            <p>A comprehensive land use plan to guide responsible development, preserve green spaces, and ensure efficient allocation.</p>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Second "Separate Your Waste" section -->
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-text text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                            <div class="service2-img rounded">
+                                <img class="img-fluid" src="{% static 'img/conflict.jpg' %}" alt="">
+                            </div>
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                                <i class="fa fa-balance-scale fa-3x" id="colour"></i>
+                            </div>
+                            <h4 class="mb-0">Land Use Conflict Resolution</h4><br>
+                            <p>Community-based mediation and arbitration processes to resolve land disputes peacefully and efficiently.</p>
+                        </div>
+                    </div>
+                </div>
+                    <!-- Second "Modern Equipment" section -->
+                    <div class="col-md-6 wow fadeIn" data-wow-delay="0.7s">
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-text text-center rounded py-5 px-4" style="box-shadow: 0 0 45px rgba(0,0,0,.08);">
+                            <div class="service2-img rounded">
+                                <img class="img-fluid" src="{% static 'img/inclusive-planning.jpg' %}" alt="">
+                            </div>
+                            <div class="btn-square bg-light rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
+                                <i class="fa fa-users-cog fa-3x" id="colour"></i>
+                            </div>
+                            <h4 class="mb-0">Inclusive Land Planning</h4><br>
+                            <p>Ensure that land planning considers the needs of all community members, including marginalized groups.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<!-- Features End -->
+
+
+
+
+
+    <!-- Service Start -->
+    <div class="container-xxl py-5">
+        <div class="container">
+            <div class="text-center mx-auto wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                <p class="fs-5 fw-bold" id="colour">Services</p>
+                <h1 class="display-5 mb-5">Engage for Collective Community Betterment</h1>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s" >
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-img rounded">
+                            <img class="img-fluid" src="{% static 'img/fermers-education.jpg' %}" alt="">
+                        </div>
+                        <div class="service2-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/icon-31.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Land Transfer Education</h4>
+                            <p class="mb-4">Raise awareness about the importance of proper education before engaging in land transfer transactions, empowering informed decision-making.</p>
+                            <a class="btn btn-sm" id="button-update" href=""><i class="fa fa-plus me-2"></i>Support</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-img rounded">
+                            <img class="img-fluid" src="{% static 'img/transfer-degital.jpg' %}" alt="">
+                        </div>
+                        <div class="service2-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/icon-32.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Digital Land Transfer Platform</h4>
+                            <p class="mb-4">Introduce a user-friendly digital platform to enhance efficiency, transparency, and accessibility in land transfer processes within and around Basse</p>
+                            <a class="btn btn-sm" id="button-update" href=""><i class="fa fa-plus  me-2"></i>Support</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-img rounded">
+                            <img class="img-fluid" src="{% static 'img/brownfield.jpg' %}" alt="">
+                        </div>
+                        <div class="service2-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/icon-33.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Brownfield Redevelopment</h4>
+                            <p class="mb-4"> Transforming underutilized or abandoned lands for new community purposes is a strategic approach involving environmental remediation</p>
+                            <a class="btn btn-sm" id="button-update" href=""><i class="fa fa-plus me-2"></i>Support</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-img rounded">
+                            <img class="img-fluid" src="{% static 'img/survey.jpg' %}" alt="">
+                        </div>
+                        <div class="service2-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/icon-34.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Digital Land Mapping Initiative</h4>
+                            <p class="mb-4">Provide digital maps and GIS services for efficient land planning, enabling communities to embrace a data-driven approach to spatial analysis and decision-making. </p>
+                            <a class="btn btn-sm" id="button-update" href=""><i class="fa fa-plus me-2"></i>Support</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-img rounded">
+                            <img class="img-fluid" src="{% static 'img/rehabilitation.jpg' %}" alt="">
+                        </div>
+                        <div class="service2-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/icon-35.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Land Rehab & Restoration Projects</h4>
+                            <p class="mb-4">Address land degradation through initiatives like planting drought-resistant vegetation, building terraces, and implementing soil conservation practices</p>
+                            <a class="btn btn-sm" id="button-update" href=""><i class="fa fa-plus me-2"></i>Support</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                    <div class="service2-item rounded d-flex h-100">
+                        <div class="service2-img rounded">
+                            <img class="img-fluid" src="{% static 'img/flood.jpg' %}" alt="">
+                        </div>
+                        <div class="service2-text rounded p-5">
+                            <div class="btn-square rounded-circle mx-auto mb-3">
+                                <img class="img-fluid" src="{% static 'img/icon/icon-36.png' %}" alt="Icon">
+                            </div>
+                            <h4 class="mb-3">Flood Mapping and Mitigation Strategies</h4>
+                            <p class="mb-4">Conduct flood risk assessments, develop flood maps, and implement mitigation measures like drainage systems and early warning Mechanism.</p>
+                            <a class="btn btn-sm" id="button-update" href=""><i class="fa fa-plus  me-2"></i>Support</a>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    <!-- Service End -->
+
+
+<iframe class="wow fadeInUp" data-wow-delay="0.1s" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d7765.292016401651!2d-14.22235261648895!3d13.310039424409007!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xeef83a2a967a7ff%3A0x197d5cb4f7ab4a89!2sBasse%20Area%20Council!5e0!3m2!1sen!2sgm!4v1695157686294!5m2!1sen!2sgm" width="100%" height="600" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+
+
+
+           <!-- Footer Start -->
+    <div class="container-fluid bg-dark footer mt-5 py-5 wow fadeIn" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Basse Area Council</h5>
+                    <p class="mb-2"><i class="fa fa-map-marker-alt me-3"></i>Mansajang Kunda Highway, Basse Santa Su, The Gambia</p>
+                    <p class="mb-2"><i class="fa fa-phone-alt me-3"></i>+220 7864131</p>
+                    <p class="mb-2"><i class="fa fa-envelope me-3"></i>info@basse.com</p>
+                    <div class="d-flex pt-3">
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://twitter.com/AreaBasse" id="button-update"><i class="fab fa-twitter"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.facebook.com/BASSEASC/" id="button-update"><i class="fab fa-facebook-f"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="" id="button-update"><i class="fab fa-youtube"></i></a>
+                        <a class="btn btn-square btn-primary rounded-circle me-2" href="https://www.linkedin.com/company/basse-area-council/" id="button-update"><i class="fab fa-linkedin-in"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Quick Links</h5>
+                    <a class="btn btn-link" href="{% url 'About'%}">About Us</a>
+                    <a class="btn btn-link" href="{% url 'Contact'%}">Contact Us</a>
+                    <a class="btn btn-link" href="{% url 'Services'%}">Our Services</a>
+                    <a class="btn btn-link" href="{% url 'Publications'%}">Publications</a>
+                    <a class="btn btn-link" href="{% url 'Council' %}">Council Members</a>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Business Hours</h5>
+                    <p class="mb-1">Monday - Thursday</p>
+                    <h6 class="text-light">09:00 am - 04:00 pm</h6>
+                    <p class="mb-1">Friday</p>
+                    <h6 class="text-light">09:00 am - 12:00 pm</h6>
+                    <p class="mb-1">Sunday & Sunday</p>
+                    <h6 class="text-light">Closed</h6>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <h5 class="text-white mb-4">Newsletter</h5>
+                    <p>Sign Up to the Newsletter of the Council and receive regular updates on developments of the council</p>
+                    <div class="position-relative w-100">
+                        <input class="form-control bg-transparent w-100 py-3 ps-4 pe-5" type="text" placeholder="Your email">
+                        <button type="button" class="btn btn-primary py-2 position-absolute top-0 end-0 mt-2 me-2" id="button-update">SignUp</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright bg-dark py-4">
+        <div class="container text-center">
+            <p class="mb-2">Copyright &copy; <a class="fw-semi-bold btn btn-link" id="color" href="#">Basse Area Council</a>, All Right Reserved. <span class="year" id="currentYear"></span></p>
+             <p class="mb-0">Developed By <a class="fw-semi-bold btn btn-link" href="#" id="color">Tech Lab</a></p>
+        </div>
+    </div>
+    <div class="credit">
+        <p class="credit2"><b>Supported By: </b><a target="-blank" href="https://www.gambiaparticipates.org/"> <img class="credit-img" src="{% static 'img/gplogo.png' %}"></a> <a target="-blank" href="https://gm.usembassy.gov/"><img class="credit-img2" src="{% static 'img/US EMBASSY.jpg' %}"></a> </p>    </div>
+    </div>
+
+<script>
+    // Get the current year
+    const currentYear = new Date().getFullYear();
+
+    // Update the content of the 'currentYear' span element in the footer
+    document.getElementById('currentYear').textContent = currentYear;
+</script>
+
+    <!-- Copyright End -->
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded-circle back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/typed/typed.min.js' %}"></script>
+    <script src="{% static 'lib/parallax/parallax.min.js' %}"></script>
+    <script src="{% static 'lib/lightbox/js/lightbox.min.js' %}"></script>
+    <script src="{% static 'lib/isotope/isotope.pkgd.min.js' %}"></script>
+    <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    <script>
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({ pageLanguage: 'en' }, 'google_translate_element');
+        }
+
+        function changeLanguage(languageCode) {
+            const element = document.querySelector('.goog-te-combo');
+            element.value = languageCode;
+            element.dispatchEvent(new Event('change'));
+        }
+    </script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+</body>
+
+</html>
